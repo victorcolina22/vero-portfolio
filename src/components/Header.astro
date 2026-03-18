@@ -1,0 +1,16 @@
+---
+import Logo from './Logo.astro';
+import StarEightTip from './icons/StarEightTip.astro';
+import WhatsAppLogo from './icons/WhatsAppLogo.astro';
+---
+
+<header class="flex items-center justify-between mt-[33px] px-[75px]">
+  <div class="flex items-center">
+    <div class="-mr-7 -mt-4 -z-10"><StarEightTip /></div>
+    <p class="uppercase font-oswald font-semibold text-4xl">works</p>
+  </div>
+  <Logo />
+  <div class="hover:scale-125 transition-transform cursor-pointer">
+    <WhatsAppLogo />
+  </div>
+</header>

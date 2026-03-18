@@ -1,1 +1,20 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@font-face {
+  font-family: Oswald;
+  src: url('/fonts/Oswald-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: Poppins;
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+@theme {
+  /* FONTS */
+  --font-oswald: 'Oswald', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+
+  /* COLORS */
+  --color-dark-blue: #171c48;
+  --color-orange: #f18350;
+}
