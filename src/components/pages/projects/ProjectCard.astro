@@ -1,0 +1,45 @@
+---
+interface Props {
+  category: string;
+  title: string;
+  description: string;
+  cardColor: string;
+  iconSrc: string;
+  iconSize: string;
+}
+
+const { category, title, description, cardColor, iconSrc, iconSize } =
+  Astro.props;
+---
+
+<article
+  class={`relative w-[350px] ${cardColor} rounded-2xl p-8 pt-10 shadow-md hover:shadow-xl transition-shadow cursor-pointer`}
+>
+  <h3
+    class="font-oswald font-semibold text-4xl text-dark-blue leading-tight"
+  >
+    {category}
+  </h3>
+
+  <h4
+    class="font-oswald font-semibold text-xl text-dark-blue mt-3 leading-snug"
+  >
+    {title}
+  </h4>
+
+  <hr class="border-dark-blue/20 my-4" />
+
+  <p class="font-poppins text-xs text-dark-blue leading-relaxed">
+    {description}
+  </p>
+
+  <!-- Decorative icon -->
+  <div class="mt-6 flex justify-start">
+    <img
+      src={iconSrc}
+      alt=""
+      class={iconSize}
+      aria-hidden="true"
+    />
+  </div>
+</article>

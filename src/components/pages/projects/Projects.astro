@@ -1,0 +1,107 @@
+---
+import ProjectCard from './ProjectCard.astro';
+
+interface Project {
+  id: string;
+  category: string;
+  title: string;
+  description: string;
+  cardColor: string;
+  iconSrc: string;
+  iconSize: string;
+}
+
+const projects: Project[] = [
+  {
+    id: 'project-0',
+    category: 'Research:',
+    title: 'Rediseñando un producto antes de que llegue al mercado',
+    description:
+      'Investigamos la deseabilidad de un nuevo seguro antes de su lanzamiento, pudiendo iterar el producto antes de salir al mercado. 20 entrevistas exploratorias revelaron baja conexión con el producto original. Se identificaron las verdaderas barreras de interés y valor percibido. Se iteró el diseño del seguro en base a los hallazgos. Se evitó una inversión fallida, alineando la oferta con las necesidades reales del usuario.',
+    cardColor: 'bg-card-research',
+    iconSrc: '/images/decorative/star-icon-frame.svg',
+    iconSize: 'w-[91px] h-[91px]',
+  },
+  {
+    id: 'project-1',
+    category: 'Product Design:',
+    title: 'Una nueva app que evoluciona con sus usuarios',
+    description:
+      'Rediseñamos la app existente para mejorar su usabilidad y expandir funcionalidades según el tipo de seguro del usuario. Análisis de la app anterior y definición de oportunidades de mejora. Perfilamiento de usuarios y desarrollo de arquitecturas de información. Diseño de flujos de tareas adaptados a distintos productos. Creación de un nuevo Design System exclusivo para la app.',
+    cardColor: 'bg-card-product',
+    iconSrc: '/images/decorative/pink-flower-sm.svg',
+    iconSize: 'w-[108px] h-[108px]',
+  },
+  {
+    id: 'project-2',
+    category: 'Data y PD:',
+    title: 'Una landing construida por quienes la usan',
+    description:
+      'Rediseñamos la landing de venta, basándonos en entrevistas con usuarios que habían abandonado el flujo, identificando puntos críticos y oportunidades de mejora. Entrevistas a usuarios que abandonaron el proceso para entender barreras. Se invitó a los usuarios a reorganizar y priorizar la información de la página. Mejoras en scroll: de 37% a 64% de usuarios llegando al final de la página. Menos abandono post-compra.',
+    cardColor: 'bg-card-data',
+    iconSrc: '/images/decorative/pink-flower-lg.svg',
+    iconSize: 'w-[74px] h-[68px]',
+  },
+  {
+    id: 'project-3',
+    category: 'Design System:',
+    title: 'Pagos complejos, decisiones simples',
+    description:
+      'Creamos un componente desde cero para el flujo de pagos en la app, permitiendo gestionar múltiples deudas por póliza de forma clara, flexible y sin sobrecargar la pantalla. Escenario: múltiples pólizas, con meses acumulados de deuda cada una. Restricción clave: debe pagarse primero la deuda más antigua. Vista por producto y desglose por mes. Permite seleccionar qué pagar: un mes, un producto o todo.',
+    cardColor: 'bg-card-design-system',
+    iconSrc: '/images/decorative/green-union.svg',
+    iconSize: 'w-[75px] h-[81px]',
+  },
+  {
+    id: 'project-4',
+    category: 'UI Y PD:',
+    title: 'Pagos complejos, decisiones simples',
+    description:
+      'Creamos un componente desde cero para el flujo de pagos en la app, permitiendo gestionar múltiples deudas por póliza de forma clara, flexible y sin sobrecargar la pantalla. Escenario: múltiples pólizas, con meses acumulados de deuda cada una. Restricción clave: debe pagarse primero la deuda más antigua. Vista por producto y desglose por mes. Permite seleccionar qué pagar: un mes, un producto o todo.',
+    cardColor: 'bg-card-ui',
+    iconSrc: '/images/decorative/gold-star-lg.svg',
+    iconSize: 'w-[75px] h-[75px]',
+  },
+];
+---
+
+<section class="relative w-full bg-beige">
+  <!-- "TRABAJOS:" label -->
+  <div class="flex items-center gap-4 px-[649px] pb-4">
+    <h2 class="font-oswald text-4xl text-dark-blue">TRABAJOS:</h2>
+  </div>
+
+  <!-- Decorative line -->
+  <img
+    src="/images/decorative/curved-line.svg"
+    alt=""
+    class="absolute w-[124px] h-[11px] right-[286px] top-[0px]"
+    aria-hidden="true"
+  />
+
+  <!-- Cards container with horizontal scroll -->
+  <div class="w-full overflow-x-auto pb-8">
+    <div
+      class="flex items-end gap-0 min-w-max px-[82px] h-[673px]"
+    >
+      {
+        projects.map((project, index) => (
+          <div
+            id={project.id}
+            class="shrink-0"
+            style={`margin-left: ${index === 0 ? '0' : '-130px'}; z-index: ${index};`}
+          >
+            <ProjectCard
+              category={project.category}
+              title={project.title}
+              description={project.description}
+              cardColor={project.cardColor}
+              iconSrc={project.iconSrc}
+              iconSize={project.iconSize}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,194 @@
+---
+interface ExperienceItem {
+  company: string;
+  role: string;
+}
+
+interface EducationItem {
+  institution: string;
+  detail: string;
+}
+
+const experience: ExperienceItem[] = [
+  { company: 'BICE VIDA  2022 - 2026', role: 'Product Designer (3 años 2 mes)' },
+  { company: 'BICE VIDA  2022 - 2026', role: 'UI Designer (5 meses)' },
+  { company: 'Sbpay 2022', role: 'UX/UI Designer (9 meses)' },
+  { company: 'Bigmind', role: 'UX/UI Designer (1 año 3 meses)' },
+];
+
+const education: EducationItem[] = [
+  {
+    institution: 'Título universitario',
+    detail: 'Universidad Arturo Michelena | 2016\nFacultad: Artes plásticas\nEspecialización: Diseño gráfico',
+  },
+  {
+    institution: 'Certificado especialización UI',
+    detail: 'Memorisely | 2024\nUI designer multimedia',
+  },
+];
+
+const softwares = [
+  { name: 'Figma', icon: '/images/icons/figma.svg' },
+  { name: 'Google Analytics', icon: '/images/icons/google-analytics.svg' },
+  { name: 'Hotjar', icon: '/images/icons/hotjar.svg' },
+  { name: 'Datadog', icon: '/images/icons/datadog.svg' },
+  { name: 'Pendo', icon: '/images/icons/pendo.svg' },
+  { name: 'Illustrator', icon: '/images/icons/illustrator.svg' },
+];
+---
+
+<div
+  class="relative mx-auto w-[1182px] bg-beige"
+>
+  <!-- Vero illustration + Logo -->
+  <div class="flex items-start gap-8">
+    <!-- Left column: Illustration + Logo + Contact -->
+    <div class="w-[300px] shrink-0">
+      <img
+        src="/images/decorative/vero-illustration-sm.svg"
+        alt="Ilustración de Vero"
+        class="w-[241px] h-[199px]"
+      />
+      <div class="mt-10">
+        <img
+          src="/images/logo.svg"
+          alt="Vero Mendoza"
+          class="w-[130px] h-[63px]"
+        />
+      </div>
+
+      <!-- Decorative star -->
+      <div class="mt-6">
+        <img
+          src="/images/decorative/gold-star-lg.svg"
+          alt=""
+          class="w-[51px] h-[51px]"
+          aria-hidden="true"
+        />
+      </div>
+
+      <!-- Contact links -->
+      <div class="mt-4 space-y-3">
+        <a
+          href="mailto:vmendoza265@gmail.com"
+          class="flex items-center gap-3 font-poppins font-medium text-base text-dark-blue hover:text-orange transition-colors"
+        >
+          <img
+            src="/images/icons/gmail.svg"
+            alt="Gmail"
+            class="w-6 h-6"
+          />
+          vmendoza265@gmail.com
+        </a>
+        <a
+          href="https://linkedin.com/in/vero-mendoza-delgado"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-3 font-poppins font-medium text-base text-dark-blue hover:text-orange transition-colors"
+        >
+          <img
+            src="/images/icons/linkedin.svg"
+            alt="LinkedIn"
+            class="w-6 h-6"
+          />
+          vero-mendoza-delgado
+        </a>
+        <a
+          href="https://wa.me/56930898318"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-3 font-poppins font-medium text-base text-dark-blue hover:text-orange transition-colors"
+        >
+          <img
+            src="/images/icons/whatsapp-sm.svg"
+            alt="WhatsApp"
+            class="w-6 h-6"
+          />
+          +56 9 30898318
+        </a>
+      </div>
+    </div>
+
+    <!-- Middle column: Experience -->
+    <div class="flex-1">
+      <h3 class="font-oswald text-[40px] text-lilac">
+        EXPERIENCIA
+      </h3>
+      <hr class="border-dark-blue/20 mt-2 mb-4" />
+
+      <div class="space-y-4">
+        {
+          experience.map((item) => (
+            <div>
+              <p class="font-poppins font-bold text-base text-dark-blue">
+                {item.company}
+              </p>
+              <p class="font-poppins font-medium text-base text-dark-blue">
+                {item.role}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+
+      <hr class="border-dark-blue/20 mt-6 mb-4" />
+
+      <h3 class="font-oswald text-[40px] text-lilac mt-2">
+        SOFTWARES
+      </h3>
+      <hr class="border-dark-blue/20 mt-2 mb-4" />
+
+      <div class="flex items-center gap-6">
+        {
+          softwares.map((sw) => (
+            <img
+              src={sw.icon}
+              alt={sw.name}
+              class="w-16 h-16"
+              title={sw.name}
+            />
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Right column: Education -->
+    <div class="w-[340px] shrink-0">
+      <h3 class="font-oswald text-[40px] text-lilac">
+        EDUCATION
+      </h3>
+      <hr class="border-dark-blue/20 mt-2 mb-4" />
+
+      <div class="space-y-4">
+        {
+          education.map((item) => (
+            <div>
+              <p class="font-poppins font-bold text-base text-dark-blue">
+                {item.institution}
+              </p>
+              <p class="font-poppins font-medium text-base text-dark-blue whitespace-pre-line">
+                {item.detail}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Done pencil illustration -->
+  <img
+    src="/images/icons/done-pencil.svg"
+    alt=""
+    class="absolute top-[280px] right-0 w-[150px] h-[150px]"
+    aria-hidden="true"
+  />
+
+  <!-- Pink flower decoration -->
+  <img
+    src="/images/decorative/pink-flower-footer.svg"
+    alt=""
+    class="absolute top-[59px] right-[504px] w-[41px] h-[37px]"
+    aria-hidden="true"
+  />
+</div>
