@@ -14,7 +14,32 @@
   --font-oswald: 'Oswald', sans-serif;
   --font-poppins: 'Poppins', sans-serif;
 
-  /* COLORS */
+  /* COLORS - Brand */
   --color-dark-blue: #171c48;
   --color-orange: #f18350;
+  --color-gold: #f0d894;
+  --color-pink: #ff92cb;
+  --color-lilac: #828be6;
+  --color-green: #b8ef97;
+  --color-beige: #f0ebe7;
+
+  /* COLORS - Project Cards */
+  --color-card-research: #eeaacd;
+  --color-card-product: #acde8e;
+  --color-card-data: #a2abff;
+  --color-card-design-system: #f0d894;
+  --color-card-ui: #ff9562;
+
+  /* ANIMATIONS */
+  --animate-scale-pulse: scale-pulse 2s ease-in-out infinite;
+
+  @keyframes scale-pulse {
+    0%,
+    100% {
+      scale: 1;
+    }
+    50% {
+      scale: 1.5;
+    }
+  }
 }
