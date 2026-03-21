@@ -1,5 +1,8 @@
 ---
 import Container from '@/components/Container.astro';
+import GoldStartLarge from '@/components/icons/GoldStartLarge.astro';
+import GreenUnionShape from '@/components/icons/GreenUnionShape.astro';
+import PinkHeart from '@/components/icons/PinkHeart.astro';
 ---
 
 <Container>
@@ -13,12 +16,7 @@ import Container from '@/components/Container.astro';
             alt=""
             class="w-[165px] h-[296px] col-start-1 row-start-1"
           />
-          <!-- Pink heart -->
-          <img
-            src="/images/decorative/pink-flower-lg.svg"
-            alt=""
-            class="absolute w-[87px] h-[84px] top-12 -left-[55px]"
-          />
+          <PinkHeart class="absolute top-12 -left-[55px]" />
         </div>
         <div class="relative">
           <!-- F -->
@@ -128,18 +126,8 @@ import Container from '@/components/Container.astro';
       </div>
 
       <div class="relative self-end -mt-5">
-        <!-- Gold star large -->
-        <img
-          src="/images/decorative/gold-star-lg.svg"
-          alt=""
-          class="w-[119px] h-[119px]"
-        />
-        <!-- Green union shape -->
-        <img
-          src="/images/decorative/green-union.svg"
-          alt=""
-          class="absolute -left-5 top-0 w-[55px] h-[61px]"
-        />
+        <GoldStartLarge />
+        <GreenUnionShape class="absolute -left-5 top-0" />
       </div>
     </div>
   </section>

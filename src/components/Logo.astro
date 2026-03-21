@@ -1,16 +1,14 @@
 ---
+import { type ColorsVariant } from '@/commons/types';
+import { LOGO_COLORS } from '@/commons/constants';
+
 interface Props {
-  color?: 'dark-blue' | 'orange';
+  color?: ColorsVariant;
 }
 
-const { color: colorProp } = Astro.props;
+const { color: colorProp = 'dark-blue' } = Astro.props;
 
-const LOGO_COLORS = {
-  'dark-blue': '#171c48',
-  orange: '#f18350',
-};
-
-const color = LOGO_COLORS[colorProp || 'dark-blue'];
+const color = LOGO_COLORS[colorProp];
 ---
 
 <svg

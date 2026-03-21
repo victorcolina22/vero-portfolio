@@ -1,0 +1,16 @@
+---
+interface Props {
+  class?: string;
+  height?: number;
+  width?: number;
+}
+
+const { class: customClass, height = 61, width = 55 } = Astro.props;
+---
+
+<img
+  src="/images/decorative/green-union.svg"
+  alt=""
+  class={customClass}
+  style={`width: ${width}px; height: ${height}px;`}
+/>

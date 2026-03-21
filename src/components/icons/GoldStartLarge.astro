@@ -1,0 +1,13 @@
+---
+interface Props {
+  size?: number;
+}
+
+const { size = 119 } = Astro.props;
+---
+
+<img
+  src="/images/decorative/gold-star-lg.svg"
+  alt=""
+  style={`width: ${size}px; height: ${size}px;`}
+/>

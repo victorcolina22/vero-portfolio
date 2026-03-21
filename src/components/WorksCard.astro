@@ -1,0 +1,62 @@
+---
+import Divider from './Divider.astro';
+import GoldStartLarge from './icons/GoldStartLarge.astro';
+import GreenUnionShape from './icons/GreenUnionShape.astro';
+import HappyFacePurple from './icons/HappyFacePurple.astro';
+import PinkHeart from './icons/PinkHeart.astro';
+import RainbowOrange from './icons/RainbowOrange.astro';
+
+import { cn } from '@/utils/utils';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div
+  id="works-card"
+  class={cn(
+    'flex flex-col gap-[14px] bg-white rounded-lg shadow-xl p-6 max-w-[333px]',
+    className,
+  )}
+>
+  <div class="flex items-center gap-2">
+    <HappyFacePurple />
+    <p class="font-oswald font-semibold">
+      <span class="text-lilac">Research:</span> Rediseñando un producto antes de que
+      salga
+    </p>
+  </div>
+  <Divider />
+  <div class="flex items-center gap-2">
+    <RainbowOrange />
+    <p class="font-oswald font-semibold">
+      <span class="text-orange">Product Designer:</span> Una nueva app que evoluciona
+      con sus usuarios
+    </p>
+  </div>
+  <Divider />
+  <div class="flex items-center gap-2">
+    <PinkHeart height={36} width={40} />
+    <p class="font-oswald font-semibold">
+      <span class="text-pink">Data y testeo:</span> Una landing construida por quienes
+      la usan
+    </p>
+  </div>
+  <Divider />
+  <div class="flex items-center gap-2">
+    <GreenUnionShape height={44} width={40} />
+    <p class="font-oswald font-semibold">
+      <span class="text-green">Design System:</span> Pagos complejos, decisiones simples
+    </p>
+  </div>
+  <Divider />
+  <div class="flex items-center gap-2">
+    <GoldStartLarge size={47} />
+    <p class="font-oswald font-semibold">
+      <span class="text-green">Design System:</span> Pagos complejos, decisiones simples
+    </p>
+  </div>
+</div>
