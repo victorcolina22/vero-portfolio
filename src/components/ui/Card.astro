@@ -1,0 +1,22 @@
+---
+import { cn } from '@/utils/utils';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div
+  id="card"
+  aria-label="card"
+  class={cn(
+    'flex flex-col gap-[14px] p-6',
+    'bg-white rounded-lg',
+    'shadow-[0_8px_30px_-5px_rgba(120,120,120,1),-4px_0_15px_rgba(120,120,120,0.10),4px_0_15px_rgba(120,120,120,0.10),0_-4px_15px_rgba(120,120,120,0.10)]',
+    className,
+  )}
+>
+  <slot />
+</div>

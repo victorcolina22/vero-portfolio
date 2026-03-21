@@ -1,4 +1,5 @@
 ---
+import Card from './ui/Card.astro';
 import Divider from './Divider.astro';
 import GoldStartLarge from './icons/GoldStartLarge.astro';
 import GreenUnionShape from './icons/GreenUnionShape.astro';
@@ -15,13 +16,7 @@ interface Props {
 const { class: className } = Astro.props;
 ---
 
-<div
-  id="works-card"
-  class={cn(
-    'flex flex-col gap-[14px] bg-white rounded-lg shadow-xl p-6 max-w-[333px]',
-    className,
-  )}
->
+<Card class={cn(className)}>
   <div class="flex items-center gap-2">
     <HappyFacePurple />
     <p class="font-oswald font-semibold">
@@ -59,4 +54,4 @@ const { class: className } = Astro.props;
       <span class="text-green">Design System:</span> Pagos complejos, decisiones simples
     </p>
   </div>
-</div>
+</Card>
