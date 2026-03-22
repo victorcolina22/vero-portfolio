@@ -5,7 +5,7 @@ interface Props {
   class?: string;
 }
 
-const { class: className } = Astro.props;
+const { class: className, ...rest } = Astro.props;
 ---
 
 <div
@@ -17,6 +17,7 @@ const { class: className } = Astro.props;
     'shadow-[0_8px_30px_-5px_rgba(120,120,120,1),-4px_0_15px_rgba(120,120,120,0.10),4px_0_15px_rgba(120,120,120,0.10),0_-4px_15px_rgba(120,120,120,0.10)]',
     className,
   )}
+  {...rest}
 >
   <slot />
 </div>

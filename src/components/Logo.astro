@@ -4,19 +4,24 @@ import { LOGO_COLORS } from '@/commons/constants';
 
 interface Props {
   color?: ColorsVariant;
+  class?: string;
 }
 
-const { color: colorProp = 'dark-blue' } = Astro.props;
+const {
+  color: colorProp = 'dark-blue',
+  class: className,
+  ...rest
+} = Astro.props;
 
 const color = LOGO_COLORS[colorProp];
 ---
 
 <svg
-  width="130"
-  height="63"
+  class={className}
   viewBox="0 0 130 63"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
+  {...rest}
 >
   <g clip-path="url(#clip0_6_1033)">
     <path

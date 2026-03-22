@@ -13,14 +13,23 @@ interface Props {
 const { class: className } = Astro.props;
 ---
 
-<Card class={cn('flex flex-col justify-center items-center', className)}>
-  <p class="font-oswald text-2xl">¡Hablemos!</p>
-  <p class="text-center">
+<Card
+  class={cn('flex flex-col justify-center items-center', className)}
+  data-access="whatsapp-info-card"
+>
+  <p class="font-oswald text-[clamp(20.4px,19.34px+0.338vw,24px)]">
+    ¡Hablemos!
+  </p>
+  <p class="text-[clamp(13.6px,12.76px+0.225vw,16px)] text-center">
     Escanea el código para que podamos hablar por whatsapp
   </p>
   <WhatsAppQR />
-  <p class="font-oswald text-2xl">También puedes encontrarme en:</p>
-  <p class="flex items-center gap-2 self-start">
+  <p class="font-oswald text-[clamp(20.4px,19.34px+0.338vw,24px)]">
+    También puedes encontrarme en:
+  </p>
+  <p
+    class="flex items-center gap-2 self-start text-[clamp(13.6px,12.76px+0.225vw,16px)]"
+  >
     <LinkedInIcon />
     <a
       class="hover:underline"
@@ -28,7 +37,16 @@ const { class: className } = Astro.props;
       target="_blank">Vero Mendoza</a
     >
   </p>
-  <p class="flex items-center gap-2 self-start">
-    <GmailIcon /> vmendoza265@gmail.com
+  <p
+    class="flex items-center gap-2 self-start text-[clamp(13.6px,12.76px+0.225vw,16px)]"
+  >
+    <GmailIcon />
+    <span>vmendoza265@gmail.com</span>
   </p>
 </Card>
+
+<style>
+  [data-access='whatsapp-info-card'] {
+    width: clamp(280px, calc(261.338px + 4.977vw), 333px);
+  }
+</style>

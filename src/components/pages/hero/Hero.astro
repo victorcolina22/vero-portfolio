@@ -3,18 +3,20 @@ import Container from '@/components/Container.astro';
 import GoldStartLarge from '@/components/icons/GoldStartLarge.astro';
 import GreenUnionShape from '@/components/icons/GreenUnionShape.astro';
 import PinkHeart from '@/components/icons/PinkHeart.astro';
+
+// TODO: Fix responsive of this component
 ---
 
 <Container>
-  <section class="flex justify-center h-[854px] ml-20 mt-[104px]">
-    <div class="flex gap-7 -mr-[127px]">
+  <section class="xl:flex justify-center h-[854px] ml-20 mt-[104px] hidden">
+    <div class="flex gap-7 xl:-mr-[127px]">
       <div class="flex flex-col gap-10">
         <div class="relative">
           <!-- P -->
           <img
             src="/images/decorative/letter-p.svg"
             alt=""
-            class="w-[165px] h-[296px] col-start-1 row-start-1"
+            class="w-[clamp(68px,33.845px+9.108vw,165px)] h-[clamp(121px,59.38px+16.432vw,296px)] col-start-1 row-start-1"
           />
           <PinkHeart class="absolute top-12 -left-[55px]" />
         </div>
@@ -23,7 +25,7 @@ import PinkHeart from '@/components/icons/PinkHeart.astro';
           <img
             src="/images/decorative/letter-f.svg"
             alt=""
-            class="w-[136px] h-[296px]"
+            class="w-[clamp(56px,calc(0.0751*(100vw-375px)+56px),136px)] h-[clamp(121px,calc(0.1643*(100vw-375px)+121px),296px)]"
           />
           <!-- Small star icon -->
           <img
@@ -46,14 +48,14 @@ import PinkHeart from '@/components/icons/PinkHeart.astro';
         <img
           src="/images/decorative/letter-o1.svg"
           alt=""
-          class="w-[166px] h-[651px] col-start-2 row-start-1 row-end-2"
+          class="w-[clamp(68px,calc(0.0986*(100vw-375px)+68px),166px)] h-[clamp(258px,calc(0.3689*(100vw-375px)+258px),651px)] col-start-2 row-start-1 row-end-2"
         />
-        <!-- O (medium) -->
-        <div class="absolute bottom-[203px] z-50">
+        <!-- O (medium) - Hidden on mobile -->
+        <div class="absolute bottom-[203px] z-50 hidden xl:block">
           <img
             src="/images/decorative/letter-o2.svg"
             alt=""
-            class="w-[166px] h-[319px]"
+            class="w-[clamp(68px,calc(0.0986*(100vw-375px)+68px),166px)] h-[clamp(127px,calc(0.1803*(100vw-375px)+127px),319px)]"
           />
         </div>
       </div>
@@ -63,23 +65,23 @@ import PinkHeart from '@/components/icons/PinkHeart.astro';
     <img
       src="/images/avatar.webp"
       alt="Ilustración de Vero Mendoza"
-      class="w-[849px] h-[892px] object-cover z-10"
+      class="w-[849px] h-[892px] object-cover z-10 hidden xl:block"
     />
 
-    <div class="flex flex-col gap-10 -ml-[240px] z-20">
+    <div class="flex flex-col gap-10 xl:-ml-[240px] z-20">
       <div class="flex items-center">
         <!-- R -->
         <img
           src="/images/decorative/letter-t.svg"
           alt=""
-          class="w-[181px] h-[296px] z-0"
+          class="w-[clamp(73px,calc(0.1014*(100vw-375px)+73px),181px)] h-[clamp(121px,calc(0.1643*(100vw-375px)+121px),296px)] z-0"
         />
-        <!-- T -->
         <div class="relative">
+          <!-- T -->
           <img
             src="/images/decorative/letter-r.svg"
             alt=""
-            class="w-[150px] h-[296px]"
+            class="w-[clamp(61px,calc(0.0836*(100vw-375px)+61px),150px)] h-[clamp(121px,calc(0.1643*(100vw-375px)+121px),296px)]"
           />
           <img
             src="/images/decorative/happy-face-orange.svg"
@@ -92,7 +94,7 @@ import PinkHeart from '@/components/icons/PinkHeart.astro';
           <img
             src="/images/decorative/letter-a.svg"
             alt=""
-            class="w-[141px] h-[295px]"
+            class="w-[clamp(58px,calc(0.0779*(100vw-375px)+58px),141px)] h-[clamp(121px,calc(0.1634*(100vw-375px)+121px),295px)]"
           />
           <!-- Star icon right -->
           <img
@@ -109,19 +111,19 @@ import PinkHeart from '@/components/icons/PinkHeart.astro';
         <img
           src="/images/decorative/letter-o3.svg"
           alt=""
-          class="w-[125px] h-[296px]"
+          class="w-[clamp(51px,calc(0.0695*(100vw-375px)+51px),125px)] h-[clamp(121px,calc(0.1643*(100vw-375px)+121px),296px)]"
         />
         <!-- I -->
         <img
           src="/images/decorative/letter-i.svg"
           alt=""
-          class="w-[58px] h-[296px]"
+          class="w-[clamp(24px,calc(0.0319*(100vw-375px)+24px),58px)] h-[clamp(121px,calc(0.1643*(100vw-375px)+121px),296px)]"
         />
         <!-- O (small) -->
         <img
           src="/images/decorative/letter-l.svg"
           alt=""
-          class="w-[166px] h-[306px]"
+          class="w-[clamp(68px,calc(0.0920*(100vw-375px)+68px),166px)] h-[clamp(126px,calc(0.1690*(100vw-375px)+126px),306px)]"
         />
       </div>
 

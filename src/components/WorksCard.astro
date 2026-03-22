@@ -16,10 +16,10 @@ interface Props {
 const { class: className } = Astro.props;
 ---
 
-<Card class={cn(className)}>
+<Card class={cn(className)} data-access="works-card">
   <div class="flex items-center gap-2">
     <HappyFacePurple />
-    <p class="font-oswald font-semibold">
+    <p class="font-oswald font-semibold text-[clamp(13.6px,12.76px+0.225vw,16px)]">
       <span class="text-lilac">Research:</span> Rediseñando un producto antes de que
       salga
     </p>
@@ -27,7 +27,7 @@ const { class: className } = Astro.props;
   <Divider />
   <div class="flex items-center gap-2">
     <RainbowOrange />
-    <p class="font-oswald font-semibold">
+    <p class="font-oswald font-semibold text-[clamp(13.6px,12.76px+0.225vw,16px)]">
       <span class="text-orange">Product Designer:</span> Una nueva app que evoluciona
       con sus usuarios
     </p>
@@ -35,7 +35,7 @@ const { class: className } = Astro.props;
   <Divider />
   <div class="flex items-center gap-2">
     <PinkHeart height={36} width={40} />
-    <p class="font-oswald font-semibold">
+    <p class="font-oswald font-semibold text-[clamp(13.6px,12.76px+0.225vw,16px)]">
       <span class="text-pink">Data y testeo:</span> Una landing construida por quienes
       la usan
     </p>
@@ -43,15 +43,21 @@ const { class: className } = Astro.props;
   <Divider />
   <div class="flex items-center gap-2">
     <GreenUnionShape height={44} width={40} />
-    <p class="font-oswald font-semibold">
+    <p class="font-oswald font-semibold text-[clamp(13.6px,12.76px+0.225vw,16px)]">
       <span class="text-green">Design System:</span> Pagos complejos, decisiones simples
     </p>
   </div>
   <Divider />
   <div class="flex items-center gap-2">
     <GoldStartLarge size={47} />
-    <p class="font-oswald font-semibold">
+    <p class="font-oswald font-semibold text-[clamp(13.6px,12.76px+0.225vw,16px)]">
       <span class="text-green">Design System:</span> Pagos complejos, decisiones simples
     </p>
   </div>
 </Card>
+
+<style>
+  [data-access='works-card'] {
+    width: clamp(280px, calc(261.338px + 4.977vw), 333px);
+  }
+</style>

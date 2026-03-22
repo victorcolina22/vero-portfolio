@@ -9,7 +9,7 @@ import WorksCard from '@/components/WorksCard.astro';
 
 <Container>
   <header
-    class="relative flex items-center justify-between px-[75px] pt-[33px]"
+    class="relative flex items-center justify-between px-[26px] lg:px-[75px] pt-[33px]"
   >
     <div>
       <label
@@ -20,26 +20,28 @@ import WorksCard from '@/components/WorksCard.astro';
           id="StarEightTip-container"
           class="-mt-3 -mr-7 z-0 transition-transform"
         >
-          <StarEightTip />
+          <StarEightTip data-access="start-eight-tip" />
         </div>
         <p
-          class="uppercase font-oswald font-semibold text-4xl z-10 group-hover:underline"
+          class="uppercase font-oswald font-semibold z-10 group-hover:underline"
+          data-access="works-text"
         >
           works
         </p>
         <input type="checkbox" class="hidden" id="toggle-works-card" />
       </label>
       <WorksCard
-        class="workscard z-100 absolute top-28 transition-all w-full max-w-[333px]"
+        class="workscard z-100 absolute top-[clamp(80px,68.732px+3.005vw,112px)] transition-all"
       />
     </div>
-    <div class="cursor-pointer"><Logo /></div>
+    <div class="cursor-pointer"><Logo data-access="logo" /></div>
     <label for="toggle-whatsapp-info">
       <WhatsAppLogo
         class="hover:scale-125 transition-transform cursor-pointer"
+        data-access="whatsapp-logo"
       />
       <WhatsAppInfoCard
-        class="whatsapp-info-card absolute z-100 top-[100px] right-22 transition-all w-full max-w-[333px]"
+        class="whatsapp-info-card absolute z-100 top-[clamp(80px,72.958px+1.878vw,100px)] right-[clamp(35px,15.634px+5.164vw,90px)] transition-all"
       />
       <input type="checkbox" class="hidden" id="toggle-whatsapp-info" />
     </label>
@@ -69,5 +71,24 @@ import WorksCard from '@/components/WorksCard.astro';
     & .whatsapp-info-card {
       opacity: 1;
     }
+  }
+
+  [data-access='start-eight-tip'] {
+    height: clamp(40px, 32.61px + 1.97vw, 61px);
+    width: clamp(40px, 32.61px + 1.97vw, 61px);
+  }
+
+  [data-access='works-text'] {
+    font-size: clamp(18px, calc(11.662px + 1.69vw), 36px);
+  }
+
+  [data-access='logo'] {
+    height: clamp(31px, calc(19.732px + 3.005vw), 63px);
+    width: clamp(63px, calc(39.408px + 6.291vw), 130px);
+  }
+
+  [data-access='whatsapp-logo'] {
+    height: clamp(33px, calc(28.775px + 1.127vw), 45px);
+    width: clamp(33px, calc(28.775px + 1.127vw), 45px);
   }
 </style>
