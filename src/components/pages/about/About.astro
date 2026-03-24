@@ -1,77 +1,73 @@
 ---
 import AboutFooter from './AboutFooter.astro';
+import Container from '@/components/Container.astro';
 ---
 
-<section class="relative bg-beige">
-  <!-- Headline -->
-  <div class="relative px-[30px] pt-[161px]">
-    <!-- Decorative curved line -->
-    <img
-      src="/images/decorative/curved-line.svg"
-      alt=""
-      class="absolute w-[334px] h-[86px]"
-      style="top: 82px; left: 300px;"
-      aria-hidden="true"
-    />
-
-    <h1
-      class="font-oswald font-semibold text-[90px] leading-[1] text-dark-blue uppercase max-w-[1378px]"
-    >
-      Creando experiencias digitales
-      <br />
-      con enfoque humano
-      <!-- Pink flower inline decoration -->
-      <img
-        src="/images/decorative/pink-flower-sm.svg"
-        alt=""
-        class="inline-block w-[54px] h-[52px] ml-2 -mt-4"
-        aria-hidden="true"
-      />
-    </h1>
-
-    <!-- Orange circle decoration -->
-    <div
-      class="absolute w-[98px] h-[98px] rounded-full bg-orange"
-      style="top: 303px; left: 212px;"
-      aria-hidden="true"
-    >
+<section class="relative bg-beige z-30 px-[46px]">
+  <Container>
+    <!-- Headline -->
+    <div class="px-[30px] pt-[161px]">
+      <h1
+        class="font-oswald font-semibold text-[90px] leading-[1] text-dark-blue uppercase text-center relative"
+      >
+        <!-- Decorative curved line -->
+        <img
+          src="/images/decorative/curved-line.svg"
+          alt=""
+          class="absolute -top-[80px] left-[270px] w-[334px] h-[86px]"
+          aria-hidden="true"
+        />
+        <span
+          >Creando experiencias digitales
+          <br />
+          con enfoque humano
+        </span>
+      </h1>
     </div>
-  </div>
 
-  <!-- Pattern background with bio overlay -->
-  <div class="relative mt-[60px]">
-    <img
-      src="/images/pattern-bg.png"
-      alt=""
-      class="w-[1348px] h-[815px] mx-auto object-cover rounded-lg"
-      aria-hidden="true"
-    />
-
-    <!-- Bio text overlay -->
-    <p
-      class="absolute top-[48px] left-[133px] right-[129px] font-poppins font-medium text-base text-dark-blue leading-relaxed max-w-[1178px]"
+    <!-- Pattern background with bio overlay -->
+    <article
+      class="relative mt-[60px] p-[83px] rounded-3xl"
+      data-access="pattern-bg"
     >
-      Artista de formación, diseñadora por vocación. Me especialicé en
-      diseño gráfico y me enamoré del diseño de experiencias. Observar
-      el mundo con curiosidad me permite crear desde lo humano:
-      soluciones visuales que conectan con las personas, que se
-      entienden y se disfrutan. Creo en el poder del trabajo en equipo,
-      en las ideas que se construyen en conjunto y en los proyectos que
-      nacen del diálogo entre la intuición y el método.
-    </p>
-  </div>
+      <!-- <img -->
+      <!--   src="/images/pattern-bg.png" -->
+      <!--   alt="" -->
+      <!--   class="w-[1348px] h-[815px] mx-auto object-cover rounded-lg" -->
+      <!--   aria-hidden="true" -->
+      <!-- /> -->
 
-  <!-- About Footer (Education, Experience, Softwares) -->
-  <div class="relative mt-[-220px]">
-    <AboutFooter />
-  </div>
+      <!-- Bio text overlay -->
+      <p
+        class="font-poppins font-medium text-base text-dark-blue leading-relaxed"
+      >
+        Artista de formación, diseñadora por vocación. Me especialicé en diseño
+        gráfico y me enamoré del diseño de experiencias. Observar el mundo con
+        curiosidad me permite crear desde lo humano: soluciones visuales que
+        conectan con las personas, que se entienden y se disfrutan. Creo en el
+        poder del trabajo en equipo, en las ideas que se construyen en conjunto
+        y en los proyectos que nacen del diálogo entre la intuición y el método.
+      </p>
 
-  <!-- "Pensando en el Usuario" heading -->
-  <div class="px-[284px] pt-[80px] pb-[30px]">
-    <h2
-      class="font-oswald font-semibold text-[96px] leading-[1] text-dark-blue"
-    >
-      Pensando en el Usuario
-    </h2>
-  </div>
+      <!-- About Footer (Education, Experience, Softwares) -->
+      <div class="relative mt-[47px]">
+        <AboutFooter />
+      </div>
+    </article>
+
+    <!-- "Pensando en el Usuario" heading -->
+    <!-- <div class="px-[284px] pt-[80px] pb-[30px]"> -->
+    <!--   <h2 -->
+    <!--     class="font-oswald font-semibold text-[96px] leading-[1] text-dark-blue" -->
+    <!--   > -->
+    <!--     Pensando en el Usuario -->
+    <!--   </h2> -->
+    <!-- </div> -->
+  </Container>
 </section>
+
+<style>
+  [data-access='pattern-bg'] {
+    background: url('/images/pattern-bg.png') no-repeat center center;
+  }
+</style>

@@ -1,1 +1,11 @@
-<div class="w-full bg-dark-blue rounded-lg h-[2px]"></div>
+---
+import { cn } from '@/utils/utils';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class={cn('w-full bg-dark-blue rounded-lg h-[2px]', className)}></div>

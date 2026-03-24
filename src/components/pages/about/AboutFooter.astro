@@ -1,4 +1,7 @@
 ---
+import Divider from '@/components/Divider.astro';
+import Logo from '@/components/Logo.astro';
+
 interface ExperienceItem {
   company: string;
   role: string;
@@ -10,7 +13,10 @@ interface EducationItem {
 }
 
 const experience: ExperienceItem[] = [
-  { company: 'BICE VIDA  2022 - 2026', role: 'Product Designer (3 años 2 mes)' },
+  {
+    company: 'BICE VIDA  2022 - 2026',
+    role: 'Product Designer (3 años 2 mes)',
+  },
   { company: 'BICE VIDA  2022 - 2026', role: 'UI Designer (5 meses)' },
   { company: 'Sbpay 2022', role: 'UX/UI Designer (9 meses)' },
   { company: 'Bigmind', role: 'UX/UI Designer (1 año 3 meses)' },
@@ -19,7 +25,8 @@ const experience: ExperienceItem[] = [
 const education: EducationItem[] = [
   {
     institution: 'Título universitario',
-    detail: 'Universidad Arturo Michelena | 2016\nFacultad: Artes plásticas\nEspecialización: Diseño gráfico',
+    detail:
+      'Universidad Arturo Michelena | 2016\nFacultad: Artes plásticas\nEspecialización: Diseño gráfico',
   },
   {
     institution: 'Certificado especialización UI',
@@ -37,32 +44,32 @@ const softwares = [
 ];
 ---
 
-<div
-  class="relative mx-auto w-[1182px] bg-beige"
->
+<div class="relative">
   <!-- Vero illustration + Logo -->
   <div class="flex items-start gap-8">
     <!-- Left column: Illustration + Logo + Contact -->
-    <div class="w-[300px] shrink-0">
+    <div class="w-[300px] flex flex-col items-center justify-center shrink-0">
       <img
         src="/images/decorative/vero-illustration-sm.svg"
         alt="Ilustración de Vero"
         class="w-[241px] h-[199px]"
       />
-      <div class="mt-10">
-        <img
-          src="/images/logo.svg"
-          alt="Vero Mendoza"
-          class="w-[130px] h-[63px]"
-        />
+      <div class="mt-5">
+        <Logo class="w-[130px] h-[63px]" color="orange" />
+        <!-- <img -->
+        <!--   src="/images/logo.svg" -->
+        <!--   alt="Vero Mendoza" -->
+        <!--   class="w-[130px] h-[63px]" -->
+        <!-- /> -->
       </div>
 
       <!-- Decorative star -->
-      <div class="mt-6">
+      <div class="mt-6 flex items-center w-full">
+        <Divider class="h-1" />
         <img
           src="/images/decorative/gold-star-lg.svg"
           alt=""
-          class="w-[51px] h-[51px]"
+          class="w-[51px] h-[51px] -ml-5"
           aria-hidden="true"
         />
       </div>
@@ -73,11 +80,7 @@ const softwares = [
           href="mailto:vmendoza265@gmail.com"
           class="flex items-center gap-3 font-poppins font-medium text-base text-dark-blue hover:text-orange transition-colors"
         >
-          <img
-            src="/images/icons/gmail.svg"
-            alt="Gmail"
-            class="w-6 h-6"
-          />
+          <img src="/images/icons/gmail.svg" alt="Gmail" class="w-6 h-6" />
           vmendoza265@gmail.com
         </a>
         <a
@@ -110,13 +113,19 @@ const softwares = [
     </div>
 
     <!-- Middle column: Experience -->
-    <div class="flex-1">
-      <h3 class="font-oswald text-[40px] text-lilac">
-        EXPERIENCIA
-      </h3>
-      <hr class="border-dark-blue/20 mt-2 mb-4" />
+    <div class="flex-1 px-40">
+      <h3 class="font-oswald text-[40px] text-lilac">EXPERIENCIA</h3>
+      <div class="flex items-center relative mt-2">
+        <img
+          src="/images/decorative/pink-flower-footer.svg"
+          alt=""
+          class="absolute -top-5 right-4 w-[48px] h-[44px]"
+          aria-hidden="true"
+        />
+        <Divider class="h-1" />
+      </div>
 
-      <div class="space-y-4">
+      <div class="space-y-4 mt-6">
         {
           experience.map((item) => (
             <div>
@@ -131,14 +140,10 @@ const softwares = [
         }
       </div>
 
-      <hr class="border-dark-blue/20 mt-6 mb-4" />
+      <h3 class="font-oswald text-[40px] text-lilac mt-8">SOFTWARES</h3>
+      <Divider class="h-1 mt-2" />
 
-      <h3 class="font-oswald text-[40px] text-lilac mt-2">
-        SOFTWARES
-      </h3>
-      <hr class="border-dark-blue/20 mt-2 mb-4" />
-
-      <div class="flex items-center gap-6">
+      <div class="flex items-center gap-6 mt-8">
         {
           softwares.map((sw) => (
             <img
@@ -153,13 +158,11 @@ const softwares = [
     </div>
 
     <!-- Right column: Education -->
-    <div class="w-[340px] shrink-0">
-      <h3 class="font-oswald text-[40px] text-lilac">
-        EDUCATION
-      </h3>
-      <hr class="border-dark-blue/20 mt-2 mb-4" />
+    <div class="w-[340px] shrink-0 px-10">
+      <h3 class="font-oswald text-[40px] text-lilac">EDUCATION</h3>
+      <Divider class="h-1 mt-2" />
 
-      <div class="space-y-4">
+      <div class="space-y-4 mt-8">
         {
           education.map((item) => (
             <div>
@@ -181,14 +184,6 @@ const softwares = [
     src="/images/icons/done-pencil.svg"
     alt=""
     class="absolute top-[280px] right-0 w-[150px] h-[150px]"
-    aria-hidden="true"
-  />
-
-  <!-- Pink flower decoration -->
-  <img
-    src="/images/decorative/pink-flower-footer.svg"
-    alt=""
-    class="absolute top-[59px] right-[504px] w-[41px] h-[37px]"
     aria-hidden="true"
   />
 </div>
