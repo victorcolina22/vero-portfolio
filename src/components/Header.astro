@@ -35,16 +35,18 @@ import WorksCard from '@/components/WorksCard.astro';
       />
     </div>
     <div class="cursor-pointer"><Logo data-access="logo" /></div>
-    <label for="toggle-whatsapp-info">
-      <WhatsAppLogo
-        class="hover:scale-125 transition-transform cursor-pointer"
-        data-access="whatsapp-logo"
-      />
+    <div>
+      <label for="toggle-whatsapp-info">
+        <WhatsAppLogo
+          class="hover:scale-125 transition-transform cursor-pointer"
+          data-access="whatsapp-logo"
+        />
+        <input type="checkbox" class="hidden" id="toggle-whatsapp-info" />
+      </label>
       <WhatsAppInfoCard
         class="whatsapp-info-card absolute z-100 top-[clamp(80px,72.958px+1.878vw,100px)] right-[clamp(35px,15.634px+5.164vw,90px)] transition-all"
       />
-      <input type="checkbox" class="hidden" id="toggle-whatsapp-info" />
-    </label>
+    </div>
   </header>
 </Container>
 
